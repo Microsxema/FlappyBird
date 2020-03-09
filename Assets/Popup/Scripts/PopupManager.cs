@@ -25,7 +25,7 @@ namespace FlappyBird.Popup
             return result;
         }
 
-        private void Start()
+        private void Awake()
         {
             Game.PopupManager = this;
 

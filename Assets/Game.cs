@@ -7,6 +7,6 @@ namespace FlappyBird
 {
 	public static class Game
 	{
-		public static PopupManager PopupManager;
+		public static PopupManager PopupManager { get; set; }
 	}
 }
