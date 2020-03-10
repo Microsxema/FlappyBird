@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace FlappyBird.Popup
 {
-    public class PopupManager : MonoBehaviour
+    public class PopupManager : MonoBehaviour, IPopupManager
     {
-        public PopupBase[] PanelstPrefab;
+        [SerializeField]
+        private PopupBase[] PanelstPrefab;
 
         private PopupBase[] _panels;
 

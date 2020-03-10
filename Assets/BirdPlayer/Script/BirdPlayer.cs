@@ -21,10 +21,25 @@ namespace FlappyBird.BirdPlayer
         private float _jumpForce;
 
         private void Awake()
-        { 
+        {
+            Game.GameManager.GameStartingMainMenu.AddListener(HideBirdPlayer);
+            Game.GameManager.StartingGame.AddListener(ShowBirdPlayer);
+
             MotionAnimation = GetComponent<Animator>();
             PlayerTransform = GetComponent<Transform>();
             PlayeRigidbody = GetComponent<Rigidbody2D>();
+        }
+
+        private void HideBirdPlayer()
+        {
+            gameObject.SetActive(false);
+        }
+
+        private void ShowBirdPlayer()
+        {
+            gameObject.SetActive(true);
+
+            PlayerInitialState();
         }
 
         public void PlayerInitialState()
