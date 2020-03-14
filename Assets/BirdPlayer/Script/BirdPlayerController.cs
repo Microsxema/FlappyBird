@@ -25,7 +25,24 @@ namespace FlappyBird.BirdPlayer.Controller
 
         private void Update()
         {
-            // GetKeyUp(KeyCode.Space)
+            
+#if UNITY_EDITOR
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                if (_isFirstTouch)
+                {
+                    _isFirstTouch = false;
+
+                    // TODO: Абсолюто худший вариант
+                    Game.PopupManager.GetPanel<PopupGetReady>().Close();
+
+                    _modelPlayer.PlayerGameMode();
+                }
+
+                _modelPlayer.JumpBirdPlayer();
+            }
+#endif
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
@@ -39,6 +56,9 @@ namespace FlappyBird.BirdPlayer.Controller
                 {
                     _isFirstTouch = false;
 
+                    // TODO: Абсолюто худший вариант
+                    Game.PopupManager.GetPanel<PopupGetReady>().Close();
+
                     _modelPlayer.PlayerGameMode();
                 }
 
@@ -46,14 +66,17 @@ namespace FlappyBird.BirdPlayer.Controller
             }
         }
 
+        public void PointsUp()
+        {
+
+        }
+
         public void GameOver()
         {
             _isFirstTouch = true;
 
-            Game.PopupManager.GetPanel<PopupGameOver>().Show();
+            Game.GameManager.OnGameEnding();
         }
-
-
     }
 }
 

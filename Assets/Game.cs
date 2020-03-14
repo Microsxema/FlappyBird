@@ -16,13 +16,13 @@ namespace FlappyBird
 
     public interface IGameManager
     {
-        UnityEvent GameStartingMainMenu { get; set; }
+        UnityEvent BeginningGame { get; set; }
 
         UnityEvent StartingGame { get; set; }
 
         UnityEvent GameEnding { get; set; }
 
-        void OnGameStartingMainMenu();
+        void OnBeginningGame();
 
         void OnStartingGame();
 

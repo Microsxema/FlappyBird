@@ -22,7 +22,7 @@ namespace FlappyBird.BirdPlayer
 
         private void Awake()
         {
-            Game.GameManager.GameStartingMainMenu.AddListener(HideBirdPlayer);
+            Game.GameManager.BeginningGame.AddListener(HideBirdPlayer);
             Game.GameManager.StartingGame.AddListener(ShowBirdPlayer);
 
             MotionAnimation = GetComponent<Animator>();

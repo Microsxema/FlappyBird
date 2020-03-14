@@ -8,15 +8,15 @@ namespace FlappyBird
 {
     public class GameManager : MonoBehaviour, IGameManager
     {
-        public UnityEvent GameStartingMainMenu { get; set; }
+        public UnityEvent BeginningGame { get; set; }
 
         public UnityEvent StartingGame { get; set; }
 
         public UnityEvent GameEnding { get; set; }
 
-        public void OnGameStartingMainMenu()
+        public void OnBeginningGame()
         {
-            GameStartingMainMenu?.Invoke();
+            BeginningGame?.Invoke();
         }
 
         public void OnStartingGame()
@@ -33,14 +33,14 @@ namespace FlappyBird
         {
             Game.GameManager = this;
 
-            GameStartingMainMenu = new UnityEvent();
+            BeginningGame = new UnityEvent();
             StartingGame = new UnityEvent();
             GameEnding = new UnityEvent();
         }
 
         private void Start()
         {
-            OnGameStartingMainMenu();
+            OnBeginningGame();
         }
     }
 }

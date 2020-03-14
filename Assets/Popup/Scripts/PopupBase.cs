@@ -6,6 +6,8 @@ namespace FlappyBird.Popup
 {
     public class PopupBase : MonoBehaviour
     {
+        public PopupManager GameManager { get; set; }
+
         public virtual void Show()
         {
             gameObject.SetActive(true);

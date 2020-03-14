@@ -36,6 +36,7 @@ namespace FlappyBird.Popup
             for (int i = 0; i < PanelstPrefab.Length; i++)
             {
                 _panels[i] = Instantiate(PanelstPrefab[i], transform);
+                _panels[i].GameManager = this;
                 _panels[i].Close();
             }
         }

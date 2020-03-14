@@ -43,8 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52b2acf8a8a3445fbd6c3eb5d5df1cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ModelPlayer: {fileID: 8451965729336277083}
-  _jumpForce: 8
+  _modelPlayer: {fileID: 0}
+  _playerView: {fileID: 0}
 --- !u!1 &1579466040569752703
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f3958459d974ebe9bb102e30dde519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerController: {fileID: 7087967085786584686}
+  IGNORE: 2
+  POINTS_UP: 8
 --- !u!212 &7648346943900661221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -238,6 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc128a6d0293e41d09ff14cb218fe47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerStartingPosition: {x: 0, y: 0, z: 0}
+  _jumpForce: 0
 --- !u!50 &4795145991729686672
 Rigidbody2D:
   serializedVersion: 4

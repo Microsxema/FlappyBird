@@ -34,6 +34,10 @@ namespace FlappyBird.Popup
 
         private void Awake()
         {
+            // TODO: Не нравится мне это.
+            // Popup префаб не должен знать что находятся за пределами PopupManager
+            Game.GameManager.GameEnding.AddListener(Show);
+
             _panelInitialStatePosition = _panelTransform.localPosition;
         }
 
@@ -59,6 +63,15 @@ namespace FlappyBird.Popup
             {
                 button.SetActive(value);
             }
+        }
+
+        public void OnClicButtonOk()
+        {
+            Close();
+
+            // TODO: Не нравится мне это.
+            // Popup префаб не должен знать что находятся за пределами PopupManager
+            Game.GameManager.OnBeginningGame();
         }
     }
 }

@@ -10,9 +10,31 @@ namespace FlappyBird.BirdPlayer.View
         [SerializeField]
         private BirdPlayerController _playerController;
 
+        [SerializeField]
+        private int IGNORE;
+
+        [SerializeField]
+        private int POINTS_UP;
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            _playerController.GameOver();
+
+            int collisionLayer = collision.gameObject.layer;
+
+            if (collisionLayer == IGNORE)
+            {
+
+            }
+
+            else if(collisionLayer == POINTS_UP)
+            {
+                _playerController.PointsUp();
+            }
+
+            else
+            {
+                _playerController.GameOver();
+            }
         }
     }
 }

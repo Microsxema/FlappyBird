@@ -9,10 +9,17 @@ namespace FlappyBird.Popup
     {
         private void Awake()
         {
-            Game.GameManager.GameStartingMainMenu.AddListener(Show);
+            // TODO: Не нравится мне это.
+            // Popup префаб не должен знать что находятся за пределами PopupManager
+            Game.GameManager.BeginningGame.AddListener(Show);
+        }
 
-            Game.GameManager.StartingGame.AddListener(Close);
+        public void OnClicButtonStart()
+        {
+            Close();
+            // TODO: Не нравится мне это.
+            // Popup префаб не должен знать что находятся за пределами PopupManager
+            Game.GameManager.OnStartingGame();
         }
     }
-
 }
